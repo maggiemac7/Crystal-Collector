@@ -1,7 +1,42 @@
-.instructions{
+body{
     border: 5px solid black;
+    background: lavender;
 }
 
-body{
-    background-color: red;
+h1 {
+  text-align: center;
+}
+
+.container{
+    box-align: center;
+}
+
+.instructions{
+    border: 5px solid black;
+    background: lavenderblush;
+}
+
+.score-card{
+    border: 3px solid black;
+    background: lavenderblush;
+}
+
+.random-number{
+    border: 3px solid black;
+    background: lavenderblush;
+}
+
+.crystals{
+    border: 3px solid black;
+    background: white;
+}
+
+img{
+    width: 76px;
+    height: 154px;
+}
+
+.crystal-total{
+    border: 3px solid black;
+    background: lavenderblush;
 }
