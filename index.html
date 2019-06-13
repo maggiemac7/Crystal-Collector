@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crystal Collector Game</title>
+  
+  <!-- Link CSS -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- jQuery Link -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="game.js"></script>
+</head> 
+
+<body>
+    
+  <h1>Crystal Collector Game</h1>
+
+  <div class="container">
+
+    <div class="row">
+        <div class="col-lg-6 instructions">
+            <p>The computer has picked a random number.</p>
+            <p>Click any combination of crystals to get the value shown</p>
+            <p>If you go over the value shown, you lose!</p>
+            <p>If you get the correct value on the nose, YOU WIN!</p>
+            <P>Wins and losses will be tracked on the score board</P>
+        </div>
+    </div>    
+    <br>
+    <div class="row">
+        <div class="col-lg-3 score-card">
+            <div class="gamesWon">Wins: </div>
+            <div class="gamesLost">Losses: </div>
+        </div>
+        <div class="col-lg-3 random-number">
+            <p>Random # <span id="number-to-guess"></span></p>
+        </div>
+    </div>    
+    <br>
+    <div class="row">
+        <div class="col-lg-1 crystals">
+            <div id="red"><img src="images/red-crystal.jpg" alt="redCrystal"></div>
+        </div>
+        
+        <div class="col-lg-1 crystals">
+            <div id="blue"><img src="images/blue-crystal.jpg" alt="blueCrystal"></div>
+        </div>
+        
+        <div class="col-lg-1 crystals">
+            <div id="orange"><img src="images/orange-crystal.jpg" alt="orangeCrystal"></div>
+        </div>
+
+        <div class="col-lg-1 crystals">
+            <div id="green"><img src="images/green-crystal.jpg" alt="greenCrystal"></div>
+        </div>
+    </div>
+    <br>
+    <div>
+        <div class="col-lg-4 crystal-total">Crystal Total</div>
+    </div>
+
+</body>
+
