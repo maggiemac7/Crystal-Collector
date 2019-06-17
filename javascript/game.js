@@ -1,14 +1,40 @@
 
 $(document).ready(function() {
 
-// Random Number between 19-120 id="number-to-guess"
+// Intial Variables
 
+// Random Number between 19-120 id="number-to-guess"
+var computerPick = Math.floor(Math.random() * (121 - 19) + 19);
+ 
+console.log(computerPick);
+
+// Red Crystal Random number between 1-12 OnClick id="red"-->
+var redGem = Math.floor(Math.random() * 12)+1; 
+
+console.log(redGem);
+
+// Blue Crystal Random number between 1-12 OnClick id="blue"
+var blueGem = Math.floor(Math.random() * 12)+1; 
+
+console.log(blueGem);
+
+// Orange Crystal Random number between 1-12 OnClick id="orange"
+var orangeGem = Math.floor(Math.random() * 12)+1; 
+
+console.log(orangeGem);
+
+// Green Crystal Random number between 1-12 OnClick id="green"
+var greenGem = Math.floor(Math.random() * 12)+1; 
+
+console.log(greenGem);
+
+// assign a function to the crystals that executes/runs when a crystal is clicked. that function needs to:
+
+    // figure out which crystal was clicked
+    // figure out which number is associated to that crystal
+    // add that number to the current total
 
 // When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
-// Red Crystal Random number between 1-12 OnClick id="red"-->
-// Blue Crystal Random number between 1-12 OnClick id="blue"
-// Orange Crystal Random number between 1-12 OnClick id="orange"
-// Green Crystal Random number between 1-12 OnClick id="green"
 
 // Your game will hide this amount until the player clicks a crystal.
 
@@ -33,4 +59,4 @@ $(document).ready(function() {
 
 // The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
 
-}
+})
