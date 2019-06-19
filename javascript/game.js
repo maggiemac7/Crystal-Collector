@@ -5,28 +5,78 @@ $(document).ready(function() {
 
 // Random Number between 19-120 id="number-to-guess"
 var computerPick = Math.floor(Math.random() * (121 - 19) + 19);
- 
-console.log(computerPick);
+console.log("Computer Pick: " + computerPick);
+
+var wins = 0;
+console.log("wins: " + wins);
+
+var losses = 0;
+console.log("losses: " + losses);
+
+var crystalTotal = 0;
+console.log("Crystal Total: " + crystalTotal);
 
 // Red Crystal Random number between 1-12 OnClick id="red"-->
 var redGem = Math.floor(Math.random() * 12)+1; 
-
-console.log(redGem);
+console.log("Red Crystal: " + redGem);
 
 // Blue Crystal Random number between 1-12 OnClick id="blue"
 var blueGem = Math.floor(Math.random() * 12)+1; 
-
-console.log(blueGem);
+console.log("Blue Crystal: " + blueGem);
 
 // Orange Crystal Random number between 1-12 OnClick id="orange"
 var orangeGem = Math.floor(Math.random() * 12)+1; 
-
-console.log(orangeGem);
+console.log("Orange Crystal: " + orangeGem);
 
 // Green Crystal Random number between 1-12 OnClick id="green"
 var greenGem = Math.floor(Math.random() * 12)+1; 
+console.log("Green Crystal: " + greenGem);
 
-console.log(greenGem);
+
+$("#red").click(function(){
+    CrystalClicked(this);
+});
+$("#blue").click(function(){
+    CrystalClicked(this);
+});
+$("#orange").click(function(){
+    CrystalClicked(this);
+
+});
+$("#green").click(function(){
+    CrystalClicked(this);
+
+});
+
+
+
+
+
+function CrystalClicked (Crystal){
+    console.log($(Crystal).attr("id"))
+    
+    var ClickedCrystal = $(Crystal).attr("id")
+
+if(ClickedCrystal === "red"){
+    
+}
+}
+
+
+
+// $(".gamesWon").html()
+// var wins = 0; 
+// console.log("wins: " + wins); 
+
+
+
+// var losses = 0; 
+// console.log("losses: " + losses); 
+
+// var score = 0; 
+// console.log("score: " + score); 
+
+
 
 // assign a function to the crystals that executes/runs when a crystal is clicked. that function needs to:
 
