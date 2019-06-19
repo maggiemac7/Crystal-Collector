@@ -40,17 +40,27 @@ console.log("Green Crystal: " + greenGem);
 
 $("#red").click(function(){
     CrystalClicked(this);
+    console.log(this);
+    
 });
 $("#blue").click(function(){
     CrystalClicked(this);
+    console.log(this);
 });
 $("#orange").click(function(){
     CrystalClicked(this);
+    console.log(this);
 });
 $("#green").click(function(){
     CrystalClicked(this);
+    console.log(this);
 });
 
+function CrystalClicked (Crystal){
+    console.log($(Crystal).attr("id"));
+    
+    var ClickedCrystal = $(Crystal).attr("id")
+}
 
 function reset () {
     computerPick = Math.floor(Math.random() * (121 - 19) + 19); 
@@ -100,4 +110,3 @@ function reset () {
 }
 
 });
-
