@@ -7,29 +7,34 @@ $(document).ready(function() {
 var computerPick = Math.floor(Math.random() * (121 - 19) + 19);
 console.log("Computer Pick: " + computerPick);
 
+// score board variables
 var wins = 0;
-console.log("wins: " + wins);
+console.log("Wins: " + wins);
 
 var losses = 0;
-console.log("losses: " + losses);
+console.log("Losses: " + losses);
 
 var crystalTotal = 0;
 console.log("Crystal Total: " + crystalTotal);
 
 // Red Crystal Random number between 1-12 OnClick id="red"-->
 var redGem = Math.floor(Math.random() * 12)+1; 
+$("#red").html("<img src=" + "images/red-crystal.jpg" + " value=" + redGem + ">");
 console.log("Red Crystal: " + redGem);
 
 // Blue Crystal Random number between 1-12 OnClick id="blue"
 var blueGem = Math.floor(Math.random() * 12)+1; 
+$("#blue").html("<img src=" + "images/blue-crystal.jpg" + " value=" + redGem + ">");
 console.log("Blue Crystal: " + blueGem);
 
 // Orange Crystal Random number between 1-12 OnClick id="orange"
 var orangeGem = Math.floor(Math.random() * 12)+1; 
+$("#orange").html("<img src=" + "images/orange-crystal.jpg" + " value=" + redGem + ">");
 console.log("Orange Crystal: " + orangeGem);
 
 // Green Crystal Random number between 1-12 OnClick id="green"
 var greenGem = Math.floor(Math.random() * 12)+1; 
+$("#green").html("<img src=" + "images/green-crystal.jpg" + " value=" + redGem + ">");
 console.log("Green Crystal: " + greenGem);
 
 
@@ -41,72 +46,58 @@ $("#blue").click(function(){
 });
 $("#orange").click(function(){
     CrystalClicked(this);
-
 });
 $("#green").click(function(){
     CrystalClicked(this);
-
 });
 
 
+function reset () {
+    computerPick = Math.floor(Math.random() * (121 - 19) + 19); 
+        console.log("computerPick: " + computerPick); 
+    $(".random-number").html(computerPick); 
 
+    crystalTotal = 0; 
+    $(".crystal-total").html(crystalTotal); 
+// -------------------------------------------------------
+    redGem = Math.floor(Math.random() * 12)+1; 
+    $("#red").html("<img src=" + "images/red-crystal.jpg" + " value=" + redGem + ">");
+    console.log("Red Crystal: " + redGem);
 
+    blueGem = Math.floor(Math.random() * 12)+1; 
+    $("#blue").html("<img src=" + "images/blue-crystal.jpg" + " value=" + blueGem + ">");
+    console.log("Blue Crystal: " + blueGem);
 
-function CrystalClicked (Crystal){
-    console.log($(Crystal).attr("id"))
+    orangeGem = Math.floor(Math.random() * 12)+1; 
+    $("#orange").html("<img src=" + "images/orange-crystal.jpg" + " value=" + orangeGem + ">");
+    console.log("Orange Crystal: " + orangeGem);
+
+    greenGem = Math.floor(Math.random() * 12)+1; 
+    $("#green").html("<img src=" + "images/green-crystal.jpg" + " value=" + greenGem + ">");
+    console.log("Green Crystal: " + greenGem);
+// ------------------------------------------------------
+    $(".crystals").on("click", function () {
+    var newTotal = crystalTotal += parseInt($(this).attr("value")); 
+        console.log("New Score: " + newTotal); 
+    $(".crystal-total").html(newTotal); 
+
+    if(newTotal === computerPick) { 
+        wins++ ; 
+        $(".gamesWon").html("Wins: " + wins); 
+            console.log("Wins: " + wins); 
+            reset(); 
     
-    var ClickedCrystal = $(Crystal).attr("id")
+    } 
 
-if(ClickedCrystal === "red"){
-    
+    else if(newTotal > computerPick) {
+        losses++ ; 
+        $(".gamesLost").html("Losses: " + losses); 
+            console.log("Losses: " + losses); 
+            reset(); 
+    }    
+
+    });
 }
-}
 
+});
 
-
-// $(".gamesWon").html()
-// var wins = 0; 
-// console.log("wins: " + wins); 
-
-
-
-// var losses = 0; 
-// console.log("losses: " + losses); 
-
-// var score = 0; 
-// console.log("score: " + score); 
-
-
-
-// assign a function to the crystals that executes/runs when a crystal is clicked. that function needs to:
-
-    // figure out which crystal was clicked
-    // figure out which number is associated to that crystal
-    // add that number to the current total
-
-// When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
-
-// Your game will hide this amount until the player clicks a crystal.
-
-// When they do click one, update the player's score counter.
-// Score counter adding together value of crystals clicked
-
-// The player wins if their total score matches the random number from the beginning of the game.
-// Score +1 if score counter === random number
-
-// Game resets if score counter === random numbers
-
-// The player loses if their score goes above the random number.
-// Loss score +1 is score counter > random number
-
-// Game resets if score counter > random number
-
-// The game restarts whenever the player wins or loses.
-// Game reset generates all new random numbers
-// Game reset resets score counter to 0
-
-// When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
-
-// The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
-
-})
